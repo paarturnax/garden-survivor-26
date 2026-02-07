@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private ZombieMovement enemyPrefab;
     [SerializeField] private float dalay;
     [SerializeField] private float leftRightDistance;
     [SerializeField] private float upDownDistance;
+    [SerializeField] private Transform player;
     void Start()
     {
-        
+        SpawnEnemy();
     }
 
     private Vector3 GetRandomPos()
@@ -20,7 +21,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemyPrefab);
-        enemy.transform.position = transform.position;
+        ZombieMovement enemy = Instantiate(enemyPrefab);
+        enemy.transform.position = GetRandomPos();
+        enemy.SetTarget(player);
     }
 }

@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a12a8ece3c0c24483273f48429a082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 10
+  speed: 5
 --- !u!61 &73827146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8168,10 +8168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f23fe8a79dc04c4b841bf14b014b02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 7227416595802744816, guid: a3f89c4e0b9031d4cb47e32f46435cbc, type: 3}
   dalay: 0
-  leftRightDistance: 0
-  upDownDistance: 0
+  leftRightDistance: 10
+  upDownDistance: 10
+  player: {fileID: 73827144}
 --- !u!4 &1867067689
 Transform:
   m_ObjectHideFlags: 0
