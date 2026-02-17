@@ -3,13 +3,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private ZombieMovement enemyPrefab;
-    [SerializeField] private float dalay;
+    [SerializeField] private float delay;
     [SerializeField] private float leftRightDistance;
     [SerializeField] private float upDownDistance;
     [SerializeField] private Transform player;
     void Start()
     {
-        SpawnEnemy();
+        InvokeRepeating(nameof(SpawnEnemy), delay, delay);
     }
 
     private Vector3 GetRandomPos()
