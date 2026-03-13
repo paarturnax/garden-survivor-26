@@ -31,5 +31,6 @@ public class MouseShooting : MonoBehaviour
         Vector3 direction = target - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
         projectile.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        sr.flipY = Mathf.Abs(transform.rotation.z) > 0.5;
     }
 }

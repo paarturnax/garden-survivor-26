@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 73827145}
   - component: {fileID: 73827146}
   - component: {fileID: 73827147}
+  - component: {fileID: 73827149}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -412,6 +413,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   hp: 5
   healthUI: {fileID: 1845568357}
+--- !u!114 &73827149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73827141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345df183f7a316b46a72e41034d79986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  spawner: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  cooldown: 0
 --- !u!1 &95053973
 GameObject:
   m_ObjectHideFlags: 0

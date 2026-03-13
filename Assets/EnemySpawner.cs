@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float leftRightDistance;
     [SerializeField] private float upDownDistance;
     [SerializeField] private Transform player;
+
+    // Список заспавненных зомби
+    private List<ZombieMovement> spawnedZombies = new List<ZombieMovement>();
+    public List<ZombieMovement> SpawnedZombies => spawnedZombies;
+
     void Start()
     {
         InvokeRepeating(nameof(SpawnEnemy), delay, delay);
@@ -24,5 +30,6 @@ public class EnemySpawner : MonoBehaviour
         ZombieMovement enemy = Instantiate(enemyPrefab);
         enemy.transform.position = GetRandomPos();
         enemy.SetTarget(player);
+        spawnedZombies.Add(enemy);
     }
 }
