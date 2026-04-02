@@ -22,4 +22,9 @@ public class ZombieMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.position, movement);
         sr.flipX = transform.position.x > player.position.x;
     }
+
+    private void OnDestroy()
+    {
+        EnemySpawner.Remove(this);
+    }
 }

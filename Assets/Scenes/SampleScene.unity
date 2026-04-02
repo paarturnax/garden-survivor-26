@@ -425,9 +425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345df183f7a316b46a72e41034d79986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  spawner: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  cooldown: 0
+  spawner: {fileID: 1867067688}
+  projectilePrefab: {fileID: 2135258486434628474, guid: 8a2e3a7147b50144bbb50f52f2ac889f, type: 3}
+  cooldown: 2.5
+  bullets: 100
 --- !u!1 &95053973
 GameObject:
   m_ObjectHideFlags: 0

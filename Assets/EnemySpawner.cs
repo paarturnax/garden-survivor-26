@@ -10,8 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform player;
 
     // Список заспавненных зомби
-    private List<ZombieMovement> spawnedZombies = new List<ZombieMovement>();
-    public List<ZombieMovement> SpawnedZombies => spawnedZombies;
+    private static List<ZombieMovement> spawnedZombies = new List<ZombieMovement>();
+    public static List<ZombieMovement> SpawnedZombies => spawnedZombies;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     {
         float x = Random.Range(-leftRightDistance, leftRightDistance);
         float y = Random.Range(-upDownDistance, upDownDistance);
-        return new Vector3(x, y, 10f);
+        return new Vector3(x, y, 0f);
     }
 
     private void SpawnEnemy()
@@ -31,5 +31,10 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = GetRandomPos();
         enemy.SetTarget(player);
         spawnedZombies.Add(enemy);
+    }
+
+    public static void Remove(ZombieMovement zombie)
+    {
+        spawnedZombies.Remove(zombie);
     }
 }
