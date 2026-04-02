@@ -4,6 +4,14 @@ public class Farmer : MonoBehaviour
 {
     [SerializeField] private int hp;
     [SerializeField] private HealthUI healthUI;
+    [SerializeField] private LevelUI levelUI;
+    public int Bullets;
+
+    public void UpdateBullets()
+    {
+        Bullets--;
+        levelUI.UpdateBullets(Bullets);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

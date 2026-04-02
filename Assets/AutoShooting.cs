@@ -5,20 +5,26 @@ public class AutoShooting : MonoBehaviour
     [SerializeField] private EnemySpawner spawner;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float cooldown;
+    private Farmer player;
 
-    [SerializeField] private int bullets;
+    //[SerializeField] private int bullets;
     private float timer = 0f;
+
+    private void Start()
+    {
+        player = GetComponent<Farmer>();
+    }
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if (bullets > 0 && timer >= cooldown)
+        if (player.Bullets > 0 && timer >= cooldown)
         {
             ZombieMovement zombie = FindNearesZombie();
             Shoot(zombie);
             timer = 0f;
-            bullets--;
+            player.UpdateBullets();
         }
     }
 
