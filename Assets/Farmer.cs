@@ -5,7 +5,13 @@ public class Farmer : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private LevelUI levelUI;
+    private ParticleSystem ps;
     public int Bullets;
+
+    private void Start()
+    {
+        ps = GetComponentInChildren<ParticleSystem>();
+    }
 
     public void UpdateBullets()
     {
@@ -20,6 +26,7 @@ public class Farmer : MonoBehaviour
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             TakeDamage(zombie.Damage);
             Destroy(collision.gameObject);
+            ps.Play();
         }
     }
     

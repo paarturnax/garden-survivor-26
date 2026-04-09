@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MouseShooting : MonoBehaviour
 {
@@ -7,11 +8,13 @@ public class MouseShooting : MonoBehaviour
 
     private SpriteRenderer sr;
     private Farmer player;
+    private AudioSource audioSource;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         player = GetComponentInParent<Farmer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -22,6 +25,7 @@ public class MouseShooting : MonoBehaviour
             Vector3 point = _camera.ScreenToWorldPoint(mousePos);
             point.z = 0f;
             player.UpdateBullets();
+            audioSource.Play();
             Shoot(point);
         }
     }

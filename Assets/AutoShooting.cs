@@ -22,6 +22,10 @@ public class AutoShooting : MonoBehaviour
         if (player.Bullets > 0 && timer >= cooldown)
         {
             ZombieMovement zombie = FindNearesZombie();
+            if (zombie == null)
+            {
+                return; // не стреляем
+            }
             Shoot(zombie);
             timer = 0f;
             player.UpdateBullets();
